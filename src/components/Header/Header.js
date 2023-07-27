@@ -148,7 +148,7 @@ const Header = () => {
         </NavMenu>
         <NavUser isToggleOpen={isToggleOpen}>
           <div className="nav-user">
-            <Link to={"/auth"} className="nav-user-link">
+            <Link to={"/login"} className="nav-user-link">
               로그인
             </Link>
           </div>
