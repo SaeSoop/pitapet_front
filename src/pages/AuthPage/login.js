@@ -40,7 +40,7 @@ function LogIn() {
   };
 
   return (
-    <Container className="p-3 my-6 d-flex flex-column w-50">
+    <Container className="d-flex flex-column">
       <Form className='form-body'>    
         <Col>
           <img src={process.env.PUBLIC_URL + '/pitapet_dog_rmbg.png'} width = '75px'/>
