@@ -1,3 +1,4 @@
+/*
 :root{
     --footer-back-color: white;
     --text-color: #b8b9b8;
@@ -17,7 +18,7 @@ footer {
     text-align: center;
 }
 footer .mail{
-    /* border-top: solid 1px var(--text-color); */
+    /* border-top: solid 1px var(--text-color); 
     padding: 7px;
     margin-top: 8px;
     margin-bottom: 1px;
@@ -41,3 +42,4 @@ footer .use ul li a{
     padding: 0px 26px;
     color: var(--text-color);
 }
+*/

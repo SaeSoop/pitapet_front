@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './components/App/App.js';
-import Footer from './components/Footer/Footer.js';
+import React from "react";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import App from "./components/App/App.js";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>
+  </StrictMode>
 );
-
