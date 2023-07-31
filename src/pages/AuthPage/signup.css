@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Gaegu:wght@700&family=Noto+Sans+KR&family=Walter+Turncoat&display=swap');
+
+*{
+    text-align: middle;
+}
+
+.form-horizontal {
+    width: 1000px;
+    height: 100%;
+    margin: 40px auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+}
+
+.overlapBtn {
+    margin-left: 0px;
+    margin-right: 16px;
+    margin-top: 20px;
+    width: 120px;
+    color: #b93f3f;
+    border-color: #b93f3f;
+    background-color: white;
+    height: 40px;
+    padding: 0px 0px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+
+    &:hover {
+        color: #2f3631;
+        transition: all ease 0.5s;
+    }
+}
+
+.messageBtn {
+    margin-left: 0px;
+    margin-right: 16px;
+    margin-top: 60px;
+    padding: 0px 0px;
+    width: 120px;
+    height: 40px;
+    color: #b93f3f;
+    border-color: #b93f3f;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+
+    &:hover {
+        color: #e087a6;
+        border-color: white;
+        font-style: bold;
+        transition: all ease 0.5s;
+    }
+}
+
+.signBtn {
+    margin-top: 230px;
+    margin-bottom: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 48px;
+    color: #5d5d5d;
+    border-color: #ffe4e4;
+    background-color: #ffe4e4;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    float: center;
+    border-style: none;
+    display: block;
+
+    &:hover {
+        color: #e087a6;
+        font-style: bold;
+        transition: all ease 0.5s;
+    }
+}
+
+.fw-normal {
+    font-size: 27px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+hr {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 1.5px;
+    border-color: rgb(82, 82, 82);   
+}
+
+/*                              */
+
+.email-line {position: relative;}
+.email-line label {
+    position: absolute;
+    top: 32px;
+    left: 15px;
+    padding: 5 10px; 
+}
+.email-line input {
+    padding: 5px 180px;
+    margin-top: 22px;
+    margin-left: 140px;
+    text-align: left; /* text 위에 문구 위치. left로 해도 왼쪽에 안 붙음 ㅜ */
+    font-family: inherit;
+}
+.email-line button {
+    padding: 5px 19px; 
+    margin-top: 22px;
+    font-family: inherit;
+}
+
+.password-line {position: relative;}
+.password-line label {
+    position: absolute;
+    top: 42px;
+    left: 15px;
+    margin-right: 0px;
+    padding: 5 10px; 
+}
+.password-line input {
+    padding: 5px 180px; /*입력칸 세로 가로*/
+    margin-top: 34px;
+    font-family: inherit;
+}
+
+.passwordck-line {position: relative;}
+.passwordck-line label {
+    position: absolute;
+    top: 52px;
+    left: 15px;
+    margin-right: 0px;
+    padding: 5 10px; 
+}
+.passwordck-line input {
+    padding: 5px 180px; /*입력칸 세로 가로*/
+    margin-top: 44px;
+    font-family: inherit;
+}
+
+.phone-line {position: relative;}
+.phone-line label {
+    position: absolute;
+    top: 62px;
+    left: 15px;
+    margin-right: 0px;
+    padding: 5 10px; 
+}
+.phone-line input {
+    padding: 5px 180px;
+    margin-top: 54px;
+    margin-left: 140px;
+    font-family: inherit;
+}
+.phone-line button {
+    padding: 5px 19px; 
+    margin-top: 54px;
+    margin-left: 0px;
+    font-family: inherit;
+}
+
+.nickname-line {position: relative;}
+.nickname-line label {
+    position: absolute;
+    top: 72px;
+    left: 15px;
+    margin-right: 0px;
+    padding: 5 10px; 
+}
+.nickname-line input {
+    padding: 5px 180px; /*입력칸 세로 가로*/
+    margin-top: 64px;
+    font-family: inherit;
+}
+
+.gender-select {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 15px;
+    padding: 5 10px; 
+}
+.gender-line label {
+    top: 122px;
+    left: 10px;
+    margin-top: 30px;
+}
+.genderck-line label {
+    margin-top: 45px;
+    margin-left: 10px;
+}
+.genderck-line input {
+    margin-top: 50px;
+    margin-left: 5px;
+}
+
+
+.birth-line {
+    position: relative;
+    margin-bottom: 30px;
+}
+.birth-line label {
+    position: absolute;
+    vertical-align: middle;
+    top: 92px;
+    left: 15px;
+    margin-right: 0px;
+    padding: 5 10px; 
+}
+.birth-line input {
+    padding: 5px 180px; /*입력칸 세로 가로*/
+    margin-top: 84px;
+    margin-bottom: 20px;
+    font-family: inherit;
+}
+
+.agree-line {position: relative;}
+.agree-line-txt {
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    margin-right: 0px;
+    padding: 5 10px; 
+}
+
+.agree-more { /* 글자 위가 아니어도 커서가 손가락으로..*/
+    float: right;
+    margin-top: 80px;
+    margin-right: 17px;
+    font-size: 15px;
+}
+.terms1-link {
+    color: #b93f3f;
+    margin-bottom: 10px;
+
+    &:hover {
+        opacity: 0.7;
+        transition: all ease 0.5s;
+    }
+}
+.terms2-link {
+    color: #b93f3f;
+    float: right;
+
+    &:hover {
+        opacity: 0.7;
+        transition: all ease 0.5s;
+    }
+}
+
+.agree-list{
+    float: left;
+}
+.agree-total {
+    margin-top: 22px;
+    margin-left: 50px;
+    float: left;
+}
+.agree-total input {
+    margin-left: -125px;
+}
+.agree-total label {
+    margin-left: 10px;
+}
+.agree-total tr { 
+    margin-left: 120.5px;
+    font-size: 13px;
+    color: #797979;
+}
+
+.agree-nece {
+    margin-top: 15px;
+    margin-left: 200px;
+    float: left;
+}
+
+.agree-use {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    float: left;
+    list-style: col;
+}
+.agree-use label {
+    vertical-align: middle;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #5a5a5a;
+}
+.agree-use tr {
+    margin-left: 2px;
+    font-size: 16px;
+    color: #797979;
+}
+
+.agree-priv {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    float: left;
+}
+.agree-priv label {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #5a5a5a;
+}
+.agree-priv tr {
+    margin-left: 2px;
+    font-size: 16px;
+    color: #797979;
+}
+
+.sign-btn {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
