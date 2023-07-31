@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import styled from 'styled-components';
 // import { FaBars } from "react-icons/fa";
 import './Footer.css';
 import 'bootstrap/dist/css/bootstrap.css';

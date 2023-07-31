@@ -3,42 +3,35 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './signup.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import HorizonLine from '../../utils/horizontal_line.js';
-
-import {
-  Form,
-  Container,
-  Col
-} from 'react-bootstrap';
-
 
 function SignUp() {
 
-  const [state, setState] = React.useState({
-    email: "",
-    phonenum: ""
-  });
-  const handleChange = event => {
-    const value = event.target.value;
-    setState({
-      ...state,
-      [event.target.name]: value
-    });
-  };
+  // const [state, setState] = React.useState({
+  //   email: "",
+  //   phonenum: ""
+  // });
+  
+  // const handleChange = event => {
+  //   const value = event.target.value;
+  //   setState({
+  //     ...state,
+  //     [event.target.name]: value
+  //   });
+  // };
 
-  const handleOnSubmit = event => {
-    event.preventDefault();
+  // const handleOnSubmit = event => {
+  //   event.preventDefault();
 
-    const { email, phonenum } = state;
-    alert(`You are login with email: ${email} and phonenum: ${phonenum}`);
+  //   const { email, phonenum } = state;
+  //   alert(`You are login with email: ${email} and phonenum: ${phonenum}`);
 
-    for (const key in state) {
-      setState({
-        ...state,
-        [key]: ""
-      });
-    }
-  };
+  //   for (const key in state) {
+  //     setState({
+  //       ...state,
+  //       [key]: ""
+  //     });
+  //   }
+  // };
 
   return (
       <form class='form-horizontal'>    

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './login.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import HorizonLine from '../../utils/horizontal_line.js';
+import HorizonLine from '../../../utils/horizontal_line.js';
 
 import {
   Form,
@@ -13,38 +13,38 @@ import {
 
 function LogIn() {
 
-  const [state, setState] = React.useState({
-    email: "",
-    password: ""
-  });
-  const handleChange = event => {
-    const value = event.target.value;
-    setState({
-      ...state,
-      [event.target.name]: value
-    });
-  };
+  // const [state, setState] = React.useState({
+  //   email: "",
+  //   password: ""
+  // });
+  // const handleChange = event => {
+  //   const value = event.target.value;
+  //   setState({
+  //     ...state,
+  //     [event.target.name]: value
+  //   });
+  // };
 
-  const handleOnSubmit = event => {
-    event.preventDefault();
+  // const handleOnSubmit = event => {
+  //   event.preventDefault();
 
-    const { email, password } = state;
-    alert(`You are login with email: ${email} and password: ${password}`);
+  //   const { email, password } = state;
+  //   alert(`You are login with email: ${email} and password: ${password}`);
 
-    for (const key in state) {
-      setState({
-        ...state,
-        [key]: ""
-      });
-    }
-  };
+  //   for (const key in state) {
+  //     setState({
+  //       ...state,
+  //       [key]: ""
+  //     });
+  //   }
+  // };
 
   return (
 
     <Container className="d-flex flex-column">
       <Form className='form-body'>    
         <Col>
-          <img src={process.env.PUBLIC_URL + '/pitapet_dog_rmbg.png'} width = '75px'/>
+          <img src={process.env.PUBLIC_URL + '/pitapet_dog_rmbg.png'}  alt={"강아지 그림"} width = '75px'/>
           <h1 class="h3 mb-4 fw-normal">로그인</h1>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control type="email" placeholder="이메일을 입력하세요" />
@@ -82,10 +82,10 @@ function LogIn() {
           <HorizonLine text="간편 로그인" />
           <div className='justify-content-between mt-4'>
             <a id="login_naver" href="#" className='mx-3'>
-              <img src={process.env.PUBLIC_URL + '/btn_naver.png'} height="30" />
+              <img src={process.env.PUBLIC_URL + '/btn_naver.png'} alt={'네이버 로그인'} height="30" />
             </a>
             <a id="login_kakao" href="#" className='mx-3'>
-              <img src={process.env.PUBLIC_URL + '/btn_kakao.png'} height="30" />
+              <img src={process.env.PUBLIC_URL + '/btn_kakao.png'} alt={'카카오 로그인'} height="30" />
             </a>
           </div>
         </div>
