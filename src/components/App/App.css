@@ -22,8 +22,9 @@ body {
 
 .Footer {
   padding-top: 150px;
-}
+
 
 ::-webkit-scrollbar {
   display: none;
-}
+  }
+

@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Gaegu:wght@700&family=Noto+Sans+KR&family=Walter+Turncoat&display=swap');
 
 .form-body {
-    width: 500px;
+
+    width: 450px;
     height: 100%;
-    margin: 30px auto;
+    margin: 40px auto;
     font-family: 'Noto Sans KR', sans-serif;
 }
 
