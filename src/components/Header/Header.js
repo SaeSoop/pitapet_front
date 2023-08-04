@@ -71,7 +71,7 @@ const NavMenu = styled.ul`
   }
 
   @media screen and (max-width: 768px) {
-    display: ${(props) => (props.isToggleOpen ? "block" : "none")};
+    display: ${(props) => (props.istoggleopen ? "block" : "none")};
     align-items: center;
     width: 100%;
     .nav-menu {
@@ -99,7 +99,7 @@ const NavUser = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    display: ${(props) => (props.isToggleOpen ? "block" : "none")};
+    display: ${(props) => (props.istoggleopen ? "block" : "none")};
     align-items: center;
     width: 100%;
     .nav-user {
@@ -114,10 +114,10 @@ const NavUser = styled.div`
 `;
 
 const Header = () => {
-  const [isToggleOpen, setIsToggleOpen] = useState(false);
+  const [istoggleopen, setIsToggleOpen] = useState([false, false]);
 
   const handleToggleOpen = () => {
-    setIsToggleOpen(!isToggleOpen);
+    setIsToggleOpen(!istoggleopen);
   };
   return (
     <>
@@ -127,8 +127,8 @@ const Header = () => {
             Pit a Pet
           </Link>
         </div>
-        <NavMenu isToggleOpen={isToggleOpen}>
-          <ul class="nav-menu">
+        <NavMenu istoggleopen={istoggleopen}>
+          <ul className="nav-menu">
             <li>
               <Link to={"/doginfo"} className="nav-menu-list">
                 내 강아지
@@ -146,7 +146,7 @@ const Header = () => {
             </li>
           </ul>
         </NavMenu>
-        <NavUser isToggleOpen={isToggleOpen}>
+        <NavUser istoggleopen={istoggleopen}>
           <div className="nav-user">
             <Link to={"/login"} className="nav-user-link">
               로그인

@@ -14,7 +14,7 @@ function Footer() {
                     <span>Contact) lora3226@naver.com</span>
                 </li>
             </div>
-            <div class="use-content">
+            <div className="use-content">
                 <li className="mx-4">
                     <Link to={"/useterms"} className="use">
                         이용약관
