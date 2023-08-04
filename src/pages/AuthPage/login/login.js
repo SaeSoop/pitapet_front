@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './login.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import HorizonLine from '../../../utils/horizontal_line.js';
+import HorizonLine from '../../../utils/horizontal_line';
+
 
 import {
   Form,
@@ -13,38 +14,18 @@ import {
 
 function LogIn() {
 
-  // const [state, setState] = React.useState({
-  //   email: "",
-  //   password: ""
-  // });
-  // const handleChange = event => {
-  //   const value = event.target.value;
-  //   setState({
-  //     ...state,
-  //     [event.target.name]: value
-  //   });
-  // };
-
-  // const handleOnSubmit = event => {
-  //   event.preventDefault();
-
-  //   const { email, password } = state;
-  //   alert(`You are login with email: ${email} and password: ${password}`);
-
-  //   for (const key in state) {
-  //     setState({
-  //       ...state,
-  //       [key]: ""
-  //     });
-  //   }
-  // };
+  //naver 로그인
+  var client_id = process.env.REACT_APP_NAVER_ID;
+  var state = process.env.REACT_APP_NAVER_STATE;
+  var redirectURI = encodeURI("http://43.202.64.233:3000/api/user/naver/callback");
+  var api_url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirectURI + '&state=' + state;
 
   return (
 
     <Container className="d-flex flex-column">
-      <Form className='form-body'>    
+      <Form className='form-body'>
         <Col>
-          <img src={process.env.PUBLIC_URL + '/pitapet_dog_rmbg.png'}  alt={"강아지 그림"} width = '75px'/>
+          <img src={process.env.PUBLIC_URL + '/pitapet_dog_rmbg.png'} alt={"강아지 그림"} width='75px' />
           <h1 class="h3 mb-4 fw-normal">로그인</h1>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control type="email" placeholder="이메일을 입력하세요" />
@@ -57,7 +38,7 @@ function LogIn() {
         <div className="d-flex justify-content-between mb-4">
           <div className='d-flex login-keep-box'>
             <input type="checkbox" className='checkbox' />
-              로그인 유지
+            로그인 유지
           </div>
           <Link to={"/findpwd"} className="findpwd-link">
             비밀번호 찾기
@@ -81,8 +62,8 @@ function LogIn() {
         <div className="text-center">
           <HorizonLine text="간편 로그인" />
           <div className='justify-content-between mt-4'>
-            <a id="login_naver" href="#" className='mx-3'>
-              <img src={process.env.PUBLIC_URL + '/btn_naver.png'} alt={'네이버 로그인'} height="30" />
+            <a className='mx-3' href={api_url}>
+              <img height='30' src='http://static.nid.naver.com/oauth/small_g_in.PNG' alt='네이버로그인'/>
             </a>
             <a id="login_kakao" href="#" className='mx-3'>
               <img src={process.env.PUBLIC_URL + '/btn_kakao.png'} alt={'카카오 로그인'} height="30" />

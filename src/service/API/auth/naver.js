@@ -1,5 +1,3 @@
-import SignInSocial from "../../utils/social.js";
-import axios from "axios";
 import request from "request";
 import dotenv from 'dotenv';
 dotenv.config();
@@ -7,14 +5,13 @@ dotenv.config();
 var client_id = process.env.NAVER_ID;
 var client_secret = process.env.NAVER_SECRET;
 var state = process.env.NAVER_STATE;
-var redirectURI = encodeURI("http://localhost:3000/api/user/naver/callback");
+var redirectURI = encodeURI("http://43.202.64.233:3000/api/user/naver/callback");
 var api_url = "";
 
 
 //네이버로부터 code,state 알아내기
 export const naver_login = async (req, res) => {
     api_url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirectURI + '&state=' + state;
-    res.writeHead(200, { 'Content-Type': 'text/html;charset=utf-8' });
     res.end("<a href='" + api_url + "'><img height='50' src='http://static.nid.naver.com/oauth/small_g_in.PNG'/></a>");
 }
 
