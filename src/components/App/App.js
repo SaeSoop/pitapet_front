@@ -8,7 +8,7 @@ import DogInfo from "../../pages/DogInfoPage/doginfo.js";
 import Diary from "../../pages/DiaryPage/diary.js";
 import Photo from "../../pages/PhotoPage/dogphoto.js";
 import LogIn from '../../pages/AuthPage/login/login';
-import SignUp from '../../pages/AuthPage/join/signup';
+import Join from '../../pages/AuthPage/join/join';
 import FindId from '../../pages/AuthPage/find/findid';
 import FindPwd from "../../pages/AuthPage/find/findpwd.js";
 
@@ -26,7 +26,7 @@ function App() {
           <Route path="/dogphoto" element={<Photo />} />
           {/* <Route path="/login" element={<LogIn />} render={(props)=> <LogIn {...props} loginCallBack={loginCallBack}/>} /> */}
           <Route path="/login" element={<LogIn />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signup" element={<Join />} />
           <Route path="/findid" element={<FindId />} />
           <Route path="/findpwd" element={<FindPwd />} />
         </Routes>
