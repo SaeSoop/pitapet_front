@@ -1,29 +1,23 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import './login.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import { Login, JoinFind, EasyLogin } from '../../../components/Authpage/login';
 import HorizonLine from '../../../utils/horizontal_line';
 
 
 import {
   Form,
   Container,
-  Col
 } from 'react-bootstrap';
 
 
 function LogIn() {
-
-  //naver 로그인
-  var client_id = process.env.REACT_APP_NAVER_ID;
-  var state = process.env.REACT_APP_NAVER_STATE;
-  var redirectURI = encodeURI("http://43.202.64.233:3000/api/user/naver/callback");
-  var api_url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirectURI + '&state=' + state;
-
   return (
-
     <Container className="d-flex flex-column">
       <Form className='form-body'>
+
+        {/* 로그인 */}
+        <Login></Login>
         <Col>
           <img src={process.env.PUBLIC_URL + '/pitapet_dog_rmbg.png'} alt={"강아지 그림"} width='75px' />
           <h1 class="h3 mb-4 fw-normal">로그인</h1>
@@ -35,6 +29,8 @@ function LogIn() {
           </Form.Group>
         </Col>
 
+        {/* 회원가입 및 이메일 찾기 */}
+        <JoinFind></JoinFind>
         <div className="d-flex justify-content-between mb-4">
           <div className='d-flex login-keep-box'>
             <input type="checkbox" className='checkbox' />
@@ -59,6 +55,8 @@ function LogIn() {
           </Link>
         </div>
 
+        {/* 간편 로그인 */}
+        <EasyLogin></EasyLogin>
         <div className="text-center">
           <HorizonLine text="간편 로그인" />
           <div className='justify-content-between mt-4'>
