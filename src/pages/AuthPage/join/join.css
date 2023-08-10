@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Gaegu:wght@700&family=Noto+Sans+KR&family=Walter+Turncoat&display=swap');
+
+
+.form-horizontal {
+    margin: 30px 300px auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+}
+
+/* 회원가입 제목 */
+.title {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+/* 구분선 */
+hr {
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 2.5px;
+    border-color: rgb(82, 82, 82);
+}
+
+/* 별 빨간색 */
+.star{
+    color: #DD7474;
+}
+
+/*               input               */
+.input-line {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 40px;
+
+}
+
+/* input 제목 */
+.input-line label { 
+    top: 20px;
+    bottom: 20px;
+}
+
+/* input 데이터 받는 칸 */
+.input-line input {
+    position: absolute;
+    left: 500px;
+    width: 500px;
+    height: 45px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+/* 중복확인 버튼 */
+.overlapBtn{
+    position: absolute;
+    margin-top: 14px;
+    left: 1030px;
+    height: 45px;
+    width: 100px;
+}
+
+/* 본인인증 버튼 */
+.checkBtn{
+    position: absolute;
+    left: 1030px;
+    height: 45px;
+    width: 100px;
+}
+
+/* 성별 */
+.gender-label {
+    position: absolute;
+    
+}
+
+.gender-check{
+    position: relative;
+    right: 78px;
+}
+
+/* agree */
+
+.agree-list {
+    float: left;
+}
+
+/* 전체 동의 */
+.agree-total {
+    margin-top: 22px;
+    margin-left: 50px;
+    float: left;
+}
+
+.agree-total input {
+    margin-left: -125px;
+}
+
+.agree-total label {
+    margin-left: 10px;
+}
+
+.agree-total tr {
+    margin-left: 110px;
+    font-size: 13px;
+    color: #797979;
+}
+
+/* 개별동의 */
+.agree-nece {
+    margin-top: 15px;
+    margin-left: 178px;
+    float: left;
+}
+
+/* 이용약관 동의 */
+.agree-use {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    list-style: col;
+}
+
+.agree-use label {
+    vertical-align: middle;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #5a5a5a;
+}
+
+.agree-use tr {
+    font-size: 16px;
+    color: #797979;
+}
+
+/* 개인정보 동의 */
+.agree-priv {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    float: left;
+}
+
+.agree-priv label {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #5a5a5a;
+}
+
+.agree-priv tr {
+    font-size: 16px;
+    color: #797979;
+}
+
+/* 약관보기 */
+.agree-more {
+    /* 글자 위가 아니어도 커서가 손가락으로..*/
+    float: right;
+    margin-top: 80px;
+    margin-right: 17px;
+    font-size: 15px;
+    color: #EFB4B4;
+}
+
+.terms1-link {
+    color: #b93f3f;
+    margin-bottom: 10px;
+
+    &:hover {
+        opacity: 0.7;
+        transition: all ease 0.5s;
+    }
+}
+
+.terms2-link {
+    color: #b93f3f;
+    float: right;
+
+    &:hover {
+        opacity: 0.7;
+        transition: all ease 0.5s;
+    }
+}
+
+
+
+/* 회원가입 버튼 */
+.signBtn {
+    margin-top: 200px;
+    margin-bottom: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+    height: 55px;
+    color: #EFB4B4;
+    border-color: #EFB4B4;
+    border-width: 2px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    float: center;
+    display: block;
+
+    &:hover {
+        background-color: #ffdfdf;
+        color: #ffffff;
+        border-style: none;
+        font-style: bold;
+        transition: all ease 0.5s;
+    }
+}

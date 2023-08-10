@@ -24,3 +24,6 @@ yarn-error.log*
 
 # .env
 .env
+
+# 빌드파일
+/build
