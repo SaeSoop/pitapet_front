@@ -23,6 +23,11 @@ hr {
     border-color: rgb(82, 82, 82);
 }
 
+/* 별 빨간색 */
+.star{
+    color: #DD7474;
+}
+
 /*               input               */
 .input-line {
     margin-top: 30px;
