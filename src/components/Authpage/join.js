@@ -19,9 +19,9 @@ export function Input(props) {
             <div className="form-group">
                 <div label className="gender-label">성별</div>
                 <div className='gender-check'>
-                <Checkrad title="남자"></Checkrad>
-                <Checkrad title="여자"></Checkrad>
-                <Checkrad title="선택안함"></Checkrad>
+                    <Checkrad title="남자"></Checkrad>
+                    <Checkrad title="여자"></Checkrad>
+                    <Checkrad title="선택안함"></Checkrad>
                 </div>
             </div>
         );
@@ -30,6 +30,7 @@ export function Input(props) {
         <div className="form-group input-line input-text">
             <tr>
                 <label>{props.title}</label>
+                <label className='star'>*</label>
                 <input type={type} id={id} placeholder={placehodler} />
 
             </tr>
@@ -40,7 +41,12 @@ export function Input(props) {
 export function Agree(props) {
     return (
         <div>
-            <tr>이용약관 동의</tr>
+            <tr>
+                이용약관 동의
+                <label className='star'>*</label>
+
+            </tr>
+
             <div className="form-group agree-total">
                 <input type="radio" id="a-radio2" />
                 <label>전체 동의합니다</label>
