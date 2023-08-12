@@ -11,7 +11,7 @@ export function Input(props) {
     //Input값이 변경될 경우 State 처리
     //유저 정보
     const handleChange = (event) => {
-        console.log(event.target.id);
+        // 성별 처리
         if (event.target.id === "gender-1") {
             setFormData({ ...formData, ["gender"]: '1' });
         }
@@ -20,15 +20,15 @@ export function Input(props) {
         }
         else if (event.target.id === "gender-3") {
             setFormData({ ...formData, ["gender"]: '3' });
-        } else {
+        } 
+        // 성별 제외 나머지 처리
+        else {
             const { name, value } = event.target;
             setFormData({ ...formData, [name]: value });
         }
-        console.log(formData);
     };
 
-
-
+    // 성별
     if (mode === "gender") {
         return (
             <div className="form-group">
@@ -50,6 +50,7 @@ export function Input(props) {
             </div>
         );
     }
+    // 성별 제외 리턴
     return (
         <div className="form-group input-line input-text">
             <tr>
