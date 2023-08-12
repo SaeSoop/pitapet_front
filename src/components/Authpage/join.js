@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import '../../pages/AuthPage/join/join.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -12,14 +11,14 @@ export function Input(props) {
     //유저 정보
     const handleChange = (event) => {
         // 성별 처리
-        if (event.target.id === "gender-1") {
-            setFormData({ ...formData, ["gender"]: '1' });
+        if (event.target.id === "sex-1") {
+            setFormData({ ...formData, "sex": '1' });
         }
-        else if (event.target.id === "gender-2") {
-            setFormData({ ...formData, ["gender"]: '2' });
+        else if (event.target.id === "sex-2") {
+            setFormData({ ...formData, "sex": '2' });
         }
-        else if (event.target.id === "gender-3") {
-            setFormData({ ...formData, ["gender"]: '3' });
+        else if (event.target.id === "sex-3") {
+            setFormData({ ...formData, "sex": '3' });
         } 
         // 성별 제외 나머지 처리
         else {
@@ -29,21 +28,21 @@ export function Input(props) {
     };
 
     // 성별
-    if (mode === "gender") {
+    if (mode === "sex") {
         return (
             <div className="form-group">
                 <div label className="gender-label">성별</div>
                 <div className='gender-check'>
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="gender" id="gender-1" value="option" onClick={handleChange} />
+                        <input className="form-check-input" type="radio" name="sex" id="sex-1" value="option" onClick={handleChange} />
                         <label className="form-check-label mx-1">남자</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="gender" id="gender-2" value="option" onClick={handleChange} />
+                        <input className="form-check-input" type="radio" name="sex" id="sex-2" value="option" onClick={handleChange} />
                         <label className="form-check-label mx-1">여자</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="gender" id="gender-3" value="option" onClick={handleChange} />
+                        <input className="form-check-input" type="radio" name="sex" id="sex-3" value="option" onClick={handleChange} />
                         <label className="form-check-label mx-1">선택안함</label>
                     </div>
                 </div>
@@ -73,12 +72,11 @@ export function Agree(props) {
     // 약관 동의
     const handleCheck = (event) => {
         if (event.target.name === "AgreeAll") {
-            setFormData({ ...formData, ["agreeUse"]: true, ["agreePriv"]: true });
+            setFormData({ ...formData, "agreeUse": true, "agreePriv": true });
         } else {
             const { name, checked } = event.target;
             setFormData({ ...formData, [name]: checked });
         }
-
     };
 
     return (
