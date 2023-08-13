@@ -6,23 +6,33 @@ import { Form } from 'react-bootstrap';
 
 // 입력창
 export function Input(props) {
-    const { type, placeholder } = props;
+    const { type, placeholder, value, onChange } = props;
     return (
         <div className="mb-3">
-            <Form.Group controlId="formBasicEmail">
-                <Form.Control type={type} placeholder={placeholder} />
+            <Form.Group>
+                <Form.Control type={type} placeholder={placeholder} value={value} onChange={onChange} />
             </Form.Group>
         </div>
     );
 }
 
-export function Login() {
+export function Login(props) {
     return (
         <div>
             <img src={process.env.PUBLIC_URL + '/images/pitapet_dog_rmbg.png'} alt={"강아지 그림"} width='75px' />
             <h3 className="mb-4">로그인</h3>
-            <Input title="이메일" type="email" id="email" placeholder="이메일을 입력하세요"></Input>
-            <Input title="비밀번호" type="password" id="password" placeholder="비밀번호를 입력하세요"></Input>
+            <Input type="email" placeholder="이메일을 입력하세요"
+                value={props.email}
+                onChange={(e)=>{
+                    props.setEmail(e.target.value);
+                }}
+            />
+            <Input type="password" placeholder="비밀번호를 입력하세요"
+                value={props.password}
+                onChange={(e)=>{
+                    props.setPassword(e.currentTarget.value);
+                }}
+            />
 
             <div className="d-flex justify-content-between mb-4">
                 <div className='d-flex login-keep-box'>
@@ -34,7 +44,7 @@ export function Login() {
                 </Link>
             </div>
 
-            <button type="submit" className="w-100 btn-lg mb-4 loginBtn">
+            <button type="submit" className="w-100 btn-lg mb-4 loginBtn" onClick={props.loginHandler}>  
                 이메일로 로그인
             </button>
         </div>
