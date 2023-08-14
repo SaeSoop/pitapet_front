@@ -4,13 +4,14 @@ import './join.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Input, Agree } from '../../../components/Authpage/join';
 import { Button } from 'reactstrap';
-import joinAPI from '../../../service/API/auth/join';
+import { joinAPI, isExist } from '../../../service/API/auth/join';
 
 
 function Join() {
 
     const [formData, setFormData] = useState({
         email: '',
+        email_check: false,
         password: '',
         password_check: '',
         pnumber: '',
@@ -22,20 +23,13 @@ function Join() {
     });
 
     return (
-        <form className='form-horizontal' onSubmit={(event) => {
-            event.preventDefault();
-            if (formData.password !== formData.password_check) {
-                event.preventDefault();
-                alert('비밀번호와 비밀번호 확인이 불일치합니다.');
-            }
-
-        }}>
+        <form className='form-horizontal' >
             {/* main */}
             <h1 className="title">회원가입</h1>
             <hr />
 
             {/* 정보 input */}
-            <Button className='overlapBtn' color='danger' outline> 중복확인 </Button>
+            <Button className='overlapBtn' color='danger' outline onClick={(event) => {isExist(event, formData, setFormData)}}> 중복확인 </Button>
             <Input title="이메일" type="email" id="email" placehodler="예) pitapet@naver.com" formData={formData} setFormData={setFormData} ></Input>
             <Input title="비밀번호" type="password" id="password" placehodler="비밀번호를 입력하세요" formData={formData} setFormData={setFormData} ></Input>
             <Input title="비밀번호 확인" type="password" id="password_check" placehodler="비밀번호를 한번 더 입력하세요" formData={formData} setFormData={setFormData} ></Input>
@@ -50,7 +44,7 @@ function Join() {
             <Agree formData={formData} setFormData={setFormData} ></Agree>
 
             {/* 회원가입 버튼 */}
-            <Button type="submit" className="signBtn" onClick={(event)=>{joinAPI(event,formData)}}> 회원가입 </Button>
+            <Button type="submit" className="signBtn" onClick={(event) => { joinAPI(event, formData) }}> 회원가입 </Button>
         </form>
     );
 }
