@@ -3,35 +3,39 @@ import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import HorizonLine from '../../utils/horizontal_line';
 import { Form } from 'react-bootstrap';
+import loginAPI from '../../service/API/auth/login';
 
 // 입력창
 export function Input(props) {
-    const { type, placeholder, value, onChange } = props;
+    const { type, placeholder, onChange } = props;
+    
     return (
         <div className="mb-3">
             <Form.Group>
-                <Form.Control type={type} placeholder={placeholder} value={value} onChange={onChange} />
+                <Form.Control type={type} placeholder={placeholder} onChange={onChange} />
             </Form.Group>
         </div>
     );
 }
 
 export function Login(props) {
+    const { formData, setFormData } = props;
+
+    // put input value in formdata func
+    const handleChange = (event)=>{
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
+    }
+
     return (
         <div>
             <img src={process.env.PUBLIC_URL + '/images/pitapet_dog_rmbg.png'} alt={"강아지 그림"} width='75px' />
             <h3 className="mb-4">로그인</h3>
             <Input type="email" placeholder="이메일을 입력하세요"
-                value={props.email}
-                onChange={(e)=>{
-                    props.setEmail(e.target.value);
-                }}
+                onChange={(event)=>{handleChange(event)}}
             />
             <Input type="password" placeholder="비밀번호를 입력하세요"
-                value={props.password}
-                onChange={(e)=>{
-                    props.setPassword(e.currentTarget.value);
-                }}
+                onChange={(event)=>{handleChange(event)}}
             />
 
             <div className="d-flex justify-content-between mb-4">
@@ -44,7 +48,8 @@ export function Login(props) {
                 </Link>
             </div>
 
-            <button type="submit" className="w-100 btn-lg mb-4 loginBtn" onClick={props.loginHandler}>  
+            {/* 로그인 버튼 클릭 시 토큰 발급 */}
+            <button type="submit" className="w-100 btn-lg mb-4 loginBtn" onClick={event=>{loginAPI(event, formData)}}>  
                 이메일로 로그인
             </button>
         </div>
