@@ -8,16 +8,13 @@ import {
   Container,
 } from 'react-bootstrap';
 
-function LogIn() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
 
-  // 로그인 버튼 클릭 시 호출
-  const loginHandler = (e)=>{
-      e.preventDefault();
-      setEmail(email);
-      setPassword(password);
-  }
+function LogIn() {
+
+  const [formData, setFormData] = React.useState({
+    email:"",
+    password:""
+  });
 
   return (
     <Container className="d-flex flex-column">
@@ -25,9 +22,8 @@ function LogIn() {
 
         {/* 로그인 */}
         <Login
-          setEmail={setEmail}
-          setPassword={setPassword}
-          loginHandler={loginHandler}
+          formData={formData}
+          setFormData={setFormData}
         />
 
         {/* 회원가입 및 이메일 찾기 */}
