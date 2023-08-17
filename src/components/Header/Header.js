@@ -98,6 +98,16 @@ const NavUser = styled.div`
     }
   }
 
+  .vr-form {
+    display: flex;
+    width: 200px;
+    height: 30px;
+    justify-content: center;
+    .vr {
+        margin: 0 15px 0 15px;
+    }    
+}
+
   @media screen and (max-width: 768px) {
     display: ${(props) => (props.istoggleopen ? "block" : "none")};
     align-items: center;
@@ -147,9 +157,13 @@ const Header = () => {
           </ul>
         </NavMenu>
         <NavUser istoggleopen={istoggleopen}>
-          <div className="nav-user">
+          <div className="nav-user vr-form">
             <Link to={"/login"} className="nav-user-link">
               로그인
+            </Link>
+            <div className="vr" />
+            <Link to={"/signup"} className="nav-user-link">
+              회원가입
             </Link>
           </div>
         </NavUser>
