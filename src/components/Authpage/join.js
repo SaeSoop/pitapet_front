@@ -2,31 +2,42 @@ import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import '../../pages/AuthPage/join/join.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { validateEmail, removeWhitespace } from '../../utils/utils';
+import { validateEmail } from '../../utils/utils';
 
 export function Input(props) {
-    //props
+    // props
     const { title, type, id, placehodler, mode } = props;
     const { formData, setFormData } = props;
 
-    //비밀번호 확인 일치한지 
-    const [checkPwd, setCheckPwd] = useState({
-        check: '',
+    // 비밀번호, 이메일 유효성 확인용 state
+    const [check, setCheck] = useState({
+        pwd: '',
+        email: ''
     });
 
-    //
-    useEffect(() => {
-        if (formData.password !== formData.password_check) {
-            setCheckPwd({ ...checkPwd, 'check': '비밀번호 불일치' })
-        } else {
-            setCheckPwd({ ...checkPwd, "check": '' })
-        }
-    })
+    // 유효성 검사
+    // useEffect(() => {
+    //     // 비밀번호 유효성
+    //     if (formData.password !== formData.password_check) {
+    //         console.log(check);
+    //         setCheck({ ...check, 'pwd': '비밀번호 불일치' });
+    //     } else {
+    //         setCheck({ ...check, "pwd": '' });
+    //     }
+    //     console.log(formData);
+    //     // 이메일 유효성
+    //     if(!validateEmail(formData.email)){
+    //         setCheck({ ...check, 'email': '이메일 형식 오류' });
+    //     } else{
+    //         setCheck({ ...check, "pwd": '' });
+    //     }
 
+    // },[formData.email,formData.password,formData.password_check]);
 
+    // 이메일 유효성 검사 
 
-    //Input값이 변경될 경우 State 처리
-    //유저 정보
+    // Input값이 변경될 경우 State 처리
+    // 유저 정보
     const handleChange = (event) => {
         // 성별 처리
         if (event.target.id === "sex-1") {
@@ -40,12 +51,8 @@ export function Input(props) {
         }
         // 성별 제외 나머지 처리
         else {
-
             const { name, value } = event.target;
             setFormData({ ...formData, [name]: value });
-            console.log(formData);
-
-
         }
     };
 
@@ -72,7 +79,7 @@ export function Input(props) {
         );
     }
 
-    //비밀번호 확인
+    // 비밀번호 확인
     if (id === "password_check") {
         return (
             <div className="form-group input-line input-text">
@@ -83,7 +90,7 @@ export function Input(props) {
                         handleChange(event);
                     }} />
                 </tr>
-                <span className="alert_msg">{checkPwd.check}</span>
+                <span className="alert_msg">{check.pwd}</span>
             </div>
         )
     }
@@ -106,6 +113,10 @@ export function Input(props) {
 
 // 약관 동의 코드
 export function Agree(props) {
+    const [agreeCheck,setAgreeCheck]=useState({
+        check: ''
+    })
+
     //params
     const { formData, setFormData } = props;
 
@@ -115,9 +126,11 @@ export function Agree(props) {
             setFormData({ ...formData, "agreeUse": true, "agreePriv": true });
         } else {
             const { name, checked } = event.target;
-            setFormData({ ...formData, [name]: checked });
+            setFormData({ ...formData, [name]: true });
         }
     };
+
+
 
     return (
         <div>
