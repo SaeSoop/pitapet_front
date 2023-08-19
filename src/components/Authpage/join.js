@@ -1,11 +1,29 @@
+import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import '../../pages/AuthPage/join/join.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import { validateEmail, removeWhitespace } from '../../utils/utils';
 
 export function Input(props) {
     //props
     const { title, type, id, placehodler, mode } = props;
     const { formData, setFormData } = props;
+
+    //비밀번호 확인 일치한지 
+    const [checkPwd, setCheckPwd] = useState({
+        check: '',
+    });
+
+    //
+    useEffect(() => {
+        if (formData.password !== formData.password_check) {
+            setCheckPwd({ ...checkPwd, 'check': '비밀번호 불일치' })
+        } else {
+            setCheckPwd({ ...checkPwd, "check": '' })
+        }
+    })
+
+
 
     //Input값이 변경될 경우 State 처리
     //유저 정보
@@ -19,11 +37,15 @@ export function Input(props) {
         }
         else if (event.target.id === "sex-3") {
             setFormData({ ...formData, "sex": '3' });
-        } 
+        }
         // 성별 제외 나머지 처리
         else {
+
             const { name, value } = event.target;
             setFormData({ ...formData, [name]: value });
+            console.log(formData);
+
+
         }
     };
 
@@ -49,6 +71,23 @@ export function Input(props) {
             </div>
         );
     }
+
+    //비밀번호 확인
+    if (id === "password_check") {
+        return (
+            <div className="form-group input-line input-text">
+                <tr>
+                    <label>{title}</label>
+                    <label className='star'>*</label>
+                    <input type={type} name={id} placeholder={placehodler} onChange={event => {
+                        handleChange(event);
+                    }} />
+                </tr>
+                <span className="alert_msg">{checkPwd.check}</span>
+            </div>
+        )
+    }
+
     // 성별 제외 리턴
     return (
         <div className="form-group input-line input-text">
@@ -59,12 +98,13 @@ export function Input(props) {
                     handleChange(event);
                 }} />
 
-
             </tr>
         </div>
     );
 }
 
+
+// 약관 동의 코드
 export function Agree(props) {
     //params
     const { formData, setFormData } = props;
