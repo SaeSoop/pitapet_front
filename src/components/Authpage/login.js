@@ -80,11 +80,15 @@ export function EasyLogin() {
     var redirectURI = encodeURI("http://43.202.64.233:3000/api/user/naver/callback");
     var api_url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirectURI + '&state=' + state;
 
+    const NaverLogin = () => {
+        window.location.href = api_url;
+    };
+
     return (
         <div className="text-center">
             <HorizonLine text="간편 로그인" />
             <div className='justify-content-between mt-4'>
-                <a className='mx-3' href={api_url}>
+                <a className='mx-3' onClick={NaverLogin}>
                     <img height='30' src='http://static.nid.naver.com/oauth/small_g_in.PNG' alt='네이버로그인' />
                 </a>
                 <a id="login_kakao" href="/" className='mx-3'>
