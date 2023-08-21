@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import HorizonLine from '../../utils/horizontal_line';
 import { Form } from 'react-bootstrap';
 import loginAPI from '../../service/API/auth/login';
+import axios from 'axios';
 
 // 입력창
 export function Input(props) {
@@ -49,8 +50,9 @@ export function Login(props) {
             </div>
 
             {/* 로그인 버튼 클릭 시 토큰 발급 */}
-            <button type="submit" className="w-100 btn-lg mb-4 loginBtn" onClick={event => { 
-                loginAPI(event, formData) }}>
+            <button type="submit" className="w-100 btn-lg mb-4 loginBtn" onClick={event => {
+                loginAPI(event, formData)
+            }}>
                 이메일로 로그인
             </button>
         </div>
@@ -74,15 +76,45 @@ export function JoinFind() {
 
 // 네이버 카카오 간편 로그인
 export function EasyLogin() {
+    const [didMount, setDidMount] = useState(false);
+
     //naver 로그인
     var client_id = process.env.REACT_APP_NAVER_ID;
     var state = process.env.REACT_APP_NAVER_STATE;
-    var redirectURI = encodeURI("http://43.202.64.233:3000/api/user/naver/callback");
+    var redirectURI = encodeURI("http://localhost:3000/login");
     var api_url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirectURI + '&state=' + state;
 
-    const NaverLogin = () => {
+    const NaverLogin = (event) => {
         window.location.href = api_url;
     };
+
+    const NaverLogin_redirect = async (code_state) => {
+        if (didMount) {
+            try {
+                const response = await axios.get('http://43.202.64.233:3000/api/user/naver/callback' + code_state, { timeout: 3000 });
+                console.log(response);
+            } catch (err) {
+                alert('인증에 실패했습니다. 고객센터로 문의해주세요.');
+                console.log(err);
+            }
+        }
+        setDidMount(false);
+
+    }
+
+    useEffect(()=>{
+        setDidMount(true);
+    },[])
+
+    // redirect가 완료된 경우
+    useEffect(() => {
+        console.log(window.location.search);
+        if (didMount && window.location.search.length > 0) {
+            const code_state = window.location.search;
+            NaverLogin_redirect(code_state);
+        }
+    }, [didMount]);
+
 
     return (
         <div className="text-center">
