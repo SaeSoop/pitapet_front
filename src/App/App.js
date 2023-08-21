@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer.js';
-import Home from "../pages/MainPage/mainpage.js";
+import MyDogm from "../pages/MyDogPage/mydogm/mydogm.js";
 import Diary from "../pages/DiaryPage/diary.js";
 import Photo from "../pages/PhotoPage/dogphoto.js";
 import LogIn from '../pages/AuthPage/login/login';
@@ -19,7 +19,7 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/mydogm" element={<MyDogm />} />
           {/* <Route path="/doginfo" element={<DogInfo />} /> */}
           <Route path="/diary" element={<Diary />} />
           <Route path="/dogphoto" element={<Photo />} />
