@@ -78,16 +78,19 @@ export function JoinFind() {
 export function EasyLogin() {
     const [didMount, setDidMount] = useState(false);
 
-    //naver 로그인
+    /*   NAVER   */
+    //naver key
     var client_id = process.env.REACT_APP_NAVER_ID;
     var state = process.env.REACT_APP_NAVER_STATE;
     var redirectURI = encodeURI("http://localhost:3000/login");
     var api_url = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=' + client_id + '&redirect_uri=' + redirectURI + '&state=' + state;
 
+    //naver 로그인 버튼 눌렀을 경우
     const NaverLogin = (event) => {
         window.location.href = api_url;
     };
 
+    //code, state을 통해 백에 사용자 정보 접근
     const NaverLogin_redirect = async (code_state) => {
         if (didMount) {
             try {
@@ -102,18 +105,64 @@ export function EasyLogin() {
 
     }
 
-    useEffect(()=>{
+    //code, state을 통해 백에 사용자 정보 접근
+    const KakaoLogin_redirect = async (code_state) => {
+        console.log(code_state);
+        if (didMount) {
+            try {
+                const response = await axios.post('http://43.202.64.233:3000/api/user/kakao',
+                {
+                    headers:{Authorization: code_state}
+                },{ timeout: 3000 });
+
+                console.log(response);
+            } catch (err) {
+                alert('인증에 실패했습니다. 고객센터로 문의해주세요.');
+                console.log(err);
+            }
+        }
+        setDidMount(false);
+
+    }
+
+
+    /*   KAKAO   */
+    const Rest_api_key = process.env.REACT_APP_KAKAOKEY; //REST API KEY
+    const redirect_uri = 'http://localhost:3000/login' //Redirect URI
+
+    // oauth 요청 URL
+    const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${Rest_api_key}&redirect_uri=${redirect_uri}&response_type=code`
+    const KakaoLogin = () => {
+        window.location.href = kakaoURL
+    }
+
+
+    useEffect(() => {
         setDidMount(true);
-    },[])
+    }, [])
 
     // redirect가 완료된 경우
     useEffect(() => {
-        console.log(window.location.search);
-        if (didMount && window.location.search.length > 0) {
-            const code_state = window.location.search;
+        var code_state = window.location.search;
+
+        //코드 길이로 네이버, 카카오 요청 구분
+        //Naver
+        if (didMount && code_state > 0 && code_state.length < 25) {
+            console.log(window.location.search);
             NaverLogin_redirect(code_state);
         }
+        //Kakao
+        if (didMount && code_state.length > 25) {
+            console.log(code_state)
+            code_state=code_state.slice(6);
+            console.log(code_state)
+
+            KakaoLogin_redirect(code_state);
+
+        }
     }, [didMount]);
+
+
 
 
     return (
@@ -123,7 +172,7 @@ export function EasyLogin() {
                 <a className='mx-3' onClick={NaverLogin}>
                     <img height='30' src='http://static.nid.naver.com/oauth/small_g_in.PNG' alt='네이버로그인' />
                 </a>
-                <a id="login_kakao" href="/" className='mx-3'>
+                <a id="login_kakao" onClick={KakaoLogin}>
                     <img src={process.env.PUBLIC_URL + '/images/btn_kakao.png'} alt={'카카오 로그인'} height="30" />
                 </a>
             </div>
