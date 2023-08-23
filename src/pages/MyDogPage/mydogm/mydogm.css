@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+/* title */
+.mypuppytitle {
+    width: 100%;
+    margin-top: 50px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 60px;
+}
+.mypuppytitle img {
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+    margin-top: 12px;
+}
+
+/* 강아지 프로필 */
+.mypuppyset {
+    justify-content: center;
+}
+.mypuppyimg1 {
+    height: 260px;
+    width: 260px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 5%;
+}
+.mypuppyimg2 {
+    height: 260px;
+    width: 260px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 5%;
+}
+.mypuppyunder {
+    margin-top: 14px;
+    margin-bottom: 18px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.mypuppyunder label {
+    width: 180px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.mypuppyunder img {
+    height: 22px;
+    width: 22px;
+}
+
+/* 강아지 프로필 세트 */
+.mypuppy-container {
+    margin-top: 90px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* 등록하기 버튼 */
+.regBtn {
+    margin-top: 50px;
+    margin-bottom: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+    height: 55px;
+    color: #EFB4B4;
+    border-color: #EFB4B4;
+    border-width: 2px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    float: center;
+    display: block;
+
+    &:hover {
+        background-color: #ffdfdf;
+        color: #ffffff;
+        border-style: none;
+        font-style: bold;
+        transition: all ease 0.5s;
+    }
+}

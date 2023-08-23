@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer.js';
-import Home from "../pages/MainPage/mainpage.js";
+import MyDogm from "../pages/MyDogPage/mydogm/mydogm.js";
+import Mypuppymore from '../pages/MyDogPage/mydogp/mydogp-more';
 import Diary from "../pages/DiaryPage/diary.js";
 import Photo from "../pages/PhotoPage/dogphoto.js";
 import LogIn from '../pages/AuthPage/login/login';
@@ -19,11 +20,9 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/doginfo" element={<DogInfo />} /> */}
+          <Route path="/mydogm" element={<MyDogm />} />
           <Route path="/diary" element={<Diary />} />
           <Route path="/dogphoto" element={<Photo />} />
-          {/* <Route path="/login" element={<LogIn />} render={(props)=> <LogIn {...props} loginCallBack={loginCallBack}/>} /> */}
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<Join />} />
           <Route path="/findid" element={<FindId />} />
