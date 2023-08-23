@@ -1,10 +1,10 @@
 /* 팝업 창 */
 .container {
-    width: 440px;
-    height: 860px;
+  width: 440px;
+  height: 860px;
 }
-body.modal-open {
-  overflow: hidden; /* Hide the window's scrollbar */
+body.modal-open { /*  */
+  overflow: hidden; 
 }
 
 /* 팝업 스크롤바 */
@@ -12,6 +12,7 @@ body.modal-open {
   max-height: 780px; 
   overflow-y: auto;
   overflow-x: hidden;
+  padding-right: 20px; 
 
   &::-webkit-scrollbar {
     width: 4px; 
@@ -69,74 +70,97 @@ body.modal-open {
 
 /* 이미지 삽입 버튼 */
 .file-label {
-    padding: 4px 0;
-    width: 200px;
-    margin-top: 14px;
-    margin-bottom: 22px;
-    margin-left: 92px;
-    background-color: #EFB4B4;
-    color: #fff;
-    text-align: center;
-    flex-direction: column;
-    border-radius: 8px;
-    cursor: pointer;
-  }
+  padding: 4px 0;
+  width: 200px;
+  margin-top: 14px;
+  margin-bottom: 22px;
+  margin-left: 80px;
+  background-color: #EFB4B4;
+  color: #fff;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 8px;
+  cursor: pointer;
+}
 .file {
-    display: none;
+  display: none;
 }
 
-/* 입력 리스트 */
+/* 입력 리스트 공통 */
 .popuplist {
-    font-size: 16px;
+  font-size: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 .popuplist label {
-    font-size: 16px;
-    margin-top: 16px;
-    margin-bottom: 4px;
-    margin-left: 4px;
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  margin-left: 4px;
 }
 .starp {
-    color: #DD7474;
+  color: #DD7474;
 }
 .listinputp {
-    /*appearance: none;*/
-    border: none;
-    border-radius: 6px;
-    background-color: #E9E9E9;
-}
-.puppygender input {
-    margin-left: 13px;
-}
-.puppygender span {
-    margin-left: 4px;
-    margin-right: 12px;
+  /*appearance: none;*/
+  border: none;
+  border-radius: 6px;
+  background-color: #E9E9E9;
 }
 
+/* 날짜 선택 (생일 + 가족이 된 날) */
+.starpp {  
+  color: #DD7474;
+  margin-right: 153px;
+  display: inline-block;
+}
+.puppydatep > * {
+  margin-bottom: 0;
+}
+.datepick {
+  width: 100%; 
+  display: flex;
+  gap: 40px; 
+  align-items: center;
+}
+.puppyfamilyp {
+  display: flex;
+}
+
+/* 성별 */
+.puppygender input {
+  margin-left: 13px;
+}
+.puppygender span {
+  margin-left: 4px;
+  margin-right: 12px;
+}
 .genderbackground {
-    position: relative;
-    height: 36px;
-    width: 200px;
-    margin-top: -8px;
-    border: none;
-    border-radius: 6px;
-    background-color: #E9E9E9;
+  position: relative;
+  height: 36px;
+  width: 200px;
+  margin-top: -8px;
+  border: none;
+  border-radius: 6px;
+  background-color: #E9E9E9;
 }
 .genderradiop {
-    position: absolute;
-    margin-top: 7px;
+  position: absolute;
+  margin-top: 7px;
 }
 .gendersecretbox {
-    position: absolute;
-    margin-top: -40px;
-    margin-left: 200px;
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 200px;
 }
 .puppygender .genderLabelContainer {
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 .puppygender .genderLabel {
   margin-top: -37px;
-    margin-left: 240px; /* Adjust as needed */
+  margin-left: 240px; 
 }
 
 /* 등록하기 버튼 */
@@ -145,7 +169,7 @@ body.modal-open {
   margin-bottom: 17px;
   margin-left: auto;
   margin-right: auto;
-  width: 384px;
+  width: 360px;
   height: 48px;
   color: #787878;
   border: none;
@@ -164,4 +188,3 @@ body.modal-open {
       transition: all ease 0.5s;
   }
 }
-
