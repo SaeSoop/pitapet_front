@@ -15,11 +15,17 @@
 }
 
 /* 강아지 프로필 */
-
 .mypuppyset {
     justify-content: center;
 }
 .mypuppyimg1 {
+    height: 260px;
+    width: 260px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 5%;
+}
+.mypuppyimg2 {
     height: 260px;
     width: 260px;
     margin-left: 0px;
@@ -40,6 +46,14 @@
 .mypuppyunder img {
     height: 22px;
     width: 22px;
+}
+
+/* 강아지 프로필 세트 */
+.mypuppy-container {
+    margin-top: 90px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
 }
 
 /* 등록하기 버튼 */
