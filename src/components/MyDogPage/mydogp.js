@@ -1,7 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import '../../pages/MyDogPage/mydogp/mydogp.css';
 import { Modal, Button, Form, Container } from "react-bootstrap";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
+{/* 성별 선택 컴포넌트 */}
 export function GenderSelection() {
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -56,81 +59,41 @@ export function GenderSelection() {
   );
 }
 
-function DropFile(dropAreaRef, fileListId) {
-  const fileList = document.getElementById(fileListId);
-
-  function preventDefaults(e) {
-    e.preventDefault();
-    e.stopPropagation();
-  }
-
-  function highlight(e) {
-    preventDefaults(e);
-    dropAreaRef.current.classList.add("highlight");
-  }
-
-  function unhighlight(e) {
-    preventDefaults(e);
-    dropAreaRef.current.classList.remove("highlight");
-  }
-
-  function handleDrop(e) {
-    unhighlight(e);
-    const dt = e.dataTransfer;
-    const files = dt.files;
-
-    handleFiles(files);
-
-    if (fileList) {
-      fileList.scrollTo({ top: fileList.scrollHeight });
-    }
-  }
-
-  function handleFiles(files) {
-    files = [...files];
-    // files.forEach(uploadFile);
-    files.forEach(previewFile);
-  }
-
-  function previewFile(file) {
-    console.log(file);
-    renderFile(file);
-  }
-
-  function renderFile(file) {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = function () {
-      const img = dropAreaRef.current.getElementsByClassName("preview")[0];
-      img.src = reader.result;
-      img.style.display = "block";
-    };
-  }
-
-  dropAreaRef.current.addEventListener("dragenter", highlight, false);
-  dropAreaRef.current.addEventListener("dragover", highlight, false);
-  dropAreaRef.current.addEventListener("dragleave", unhighlight, false);
-  dropAreaRef.current.addEventListener("drop", handleDrop, false);
-
-  return {
-    handleFiles
+{/* 날짜 선택 컴포넌트 */}
+export function DatePickerField ({ selectedDate, onChange }) {
+  const customStyles = {
+    selected: {
+      backgroundColor: 'black',
+    },
   };
-}
-
-export function MypuppyReg (props) {
-    const { show, onHide } = props;
-    const dropAreaRef = useRef(null);
-    const dropFile = DropFile("drop-file", "files");
-
-    const handleModalScroll = (event) => {
-      event.stopPropagation();
-    };
-    const handleFileChange = (e) => {
-      dropFile.handleFiles(e.target.files);
-    };
 
   return (
-    <Modal className="mydogpopup"
+    <DatePicker
+      selected={selectedDate}
+      onChange={date => onChange(date)}
+      dateFormat="yyyy-MM-dd"
+      className="form-control"
+    />
+  );
+};
+
+{/* 팝업창 전체 */}
+export function MypuppyReg (props) {
+  const { show, onHide } = props;
+  const dropAreaId = "drop-file";
+  const fileListId = "files";
+  const [birthDate, setBirthDate] = useState(null);
+
+  const handleModalScroll = (event) => {
+    event.stopPropagation();
+  };
+
+  const handleBirthDateChange = (date) => {
+    setBirthDate(date);
+  };
+
+  return (
+    <Modal className="mydogpop"
       show={show}
       onHide={onHide}
       size="md"
@@ -166,9 +129,16 @@ export function MypuppyReg (props) {
               <Form.Control className="listinputp" />
             </Form.Group>
             
-            <Form.Group className="puppytypep">
+            <Form.Group className="puppydatep">
               <Form.Label>생일</Form.Label>
+              <label className='starpp'>*</label>
+              <Form.Label>가족이 된 날</Form.Label>
               <label className='starp'>*</label>
+              <p></p>
+              <div className="datepick">
+                <DatePickerField className="pickbirth" selectedDate={birthDate} onChange={handleBirthDateChange} />
+                <DatePickerField className="pickfamily" selectedDate={birthDate} onChange={handleBirthDateChange} />
+              </div>
             </Form.Group>
 
             <Form.Group className="puppytypep">
@@ -180,28 +150,28 @@ export function MypuppyReg (props) {
             <GenderSelection />
 
             <Form.Group className="puppycharp">
-            <Form.Label>특징</Form.Label>
-            <Form.Control className="listinputp" />
+              <Form.Label>특징</Form.Label>
+              <Form.Control className="listinputp" />
             </Form.Group>
             
-            <Form.Group>
-            <Form.Label>특기</Form.Label>
-            <Form.Control className="listinputp" />
+            <Form.Group className="puppyspecp">
+              <Form.Label>특기</Form.Label>
+              <Form.Control className="listinputp" />
             </Form.Group>
 
-            <Form.Group>
-            <Form.Label>좋아하는 놀이</Form.Label>
-            <Form.Control className="listinputp" />
+            <Form.Group className="puppyplayp">
+              <Form.Label>좋아하는 놀이</Form.Label>
+              <Form.Control className="listinputp" />
             </Form.Group>
             
-            <Form.Group>
-            <Form.Label>좋아하는 간식</Form.Label>
-            <Form.Control className="listinputp" />
+            <Form.Group className="puppysnackp">
+              <Form.Label>좋아하는 간식</Form.Label>
+              <Form.Control className="listinputp" />
             </Form.Group>
             
-            <Form.Group>
-            <Form.Label>질환</Form.Label>
-            <Form.Control className="listinputp" />
+            <Form.Group className="puppysickp">
+              <Form.Label>질환</Form.Label>
+              <Form.Control className="listinputp" />
             </Form.Group>
 
             <Button block variant="info" type="button" className="my-5 signBtnp">
