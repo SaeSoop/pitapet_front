@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import { Mypuppytitle, Mypuppylist } from '../../../components/MyDogPage/mydogm';
-import Popup from "../../../components/MyDogPage/mydogp"
+import { Mypuppytitle, Mypuppylist1, Mypuppylist2, Banner } from '../../../components/MyDogPage/mydogm';
 import './mydogm.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import MypuppyReg from '../../../components/MyDogPage/mydogp';
-import { Input, Agree } from '../../../components/Authpage/join';
+import Mypuppymore from '../mydogp/mydogp-more';
 import { Button } from 'reactstrap';
-import { joinAPI, isExist } from '../../../service/API/auth/join';
 
-function Join() {
+function Mydogm() {
     const [MypuppyRegOn, setMypuppyRegOn] = useState(false);
+
     return ( 
         <>
-        <MypuppyReg
+        <MypuppyReg // 등록하기 누르면 뜨는 창 function -- 원래 MypuppyReg
           show={MypuppyRegOn}
           onHide={() => setMypuppyRegOn(false)}
         />
@@ -23,20 +22,24 @@ function Join() {
               </h1>
  
               {/* 강아지 프로필 */}
-              <Mypuppylist />
-  
+              <div className="mypuppy-container">
+                <div className='mainlist'>
+                  <Banner />
+                </div>
+              </div>
+
               {/* 등록하기 버튼 */}
               <div className="regBtn" type="submit">
-                  <Button className='regBtn'
-                    variant="secondary"
-                    onClick={() => setMypuppyRegOn(true)}
-                  >
-                    Sign Up
-                  </Button>
-                </div>
+                <Button className='regBtn'
+                  variant="secondary"
+                  onClick={() => { console.log("Butto clicked"); setMypuppyRegOn(true);}}
+                >
+                  등 록 하 기
+                </Button>
+              </div>
           </form>
           </>
     );
 }
 
-export default Join;
+export default Mydogm;
