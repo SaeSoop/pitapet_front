@@ -4,6 +4,7 @@ import './App.css';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer.js';
 import MyDogm from "../pages/MyDogPage/mydogm/mydogm.js";
+import Mypuppymore from '../pages/MyDogPage/mydogp/mydogp-more';
 import Diary from "../pages/DiaryPage/diary.js";
 import Photo from "../pages/PhotoPage/dogphoto.js";
 import LogIn from '../pages/AuthPage/login/login';
