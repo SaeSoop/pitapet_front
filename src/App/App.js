@@ -21,10 +21,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/mydogm" element={<MyDogm />} />
-          {/* <Route path="/doginfo" element={<DogInfo />} /> */}
           <Route path="/diary" element={<Diary />} />
           <Route path="/dogphoto" element={<Photo />} />
-          {/* <Route path="/login" element={<LogIn />} render={(props)=> <LogIn {...props} loginCallBack={loginCallBack}/>} /> */}
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<Join />} />
           <Route path="/findid" element={<FindId />} />
