@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export function MymoreImg(props) {
     const now = new Date(); 
-     
+    
     const propDate = new Date(props.date);
     const propYear = propDate.getFullYear();
     const propMonth = propDate.getMonth();
