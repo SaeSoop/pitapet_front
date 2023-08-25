@@ -41,9 +41,5 @@ export const joinAPI = async (event, formData) => {
     } catch (error) {
         console.error(error); // 회원가입 실패 시 서버로부터 온 에러 데이터 처리
     }
-
-
-
-
 }
 

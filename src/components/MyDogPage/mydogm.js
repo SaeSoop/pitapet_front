@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import '../../../src/pages/MyDogPage/mydogm/mydogm.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import axios from 'axios';
 
 /* 타이틀 */
 export function Mypuppytitle(props) {
@@ -37,6 +38,49 @@ export function Mypuppyinfo2(props) {
         </div>
     );
 }
+
+export const PuppyList = async (props) => {
+    // 객채의 id를 ref로 사용한다.
+    const nextId = useRef(1);
+
+    // 강아지 정보를 담는 List
+    const [userList, setResult] = useState([]);
+
+    // 입력 필드 상태 관리
+    const [text, setText] = useState({
+        id: nextId.current,
+        nickname: "",
+        realname: "",
+        isActive: false,
+    });
+
+    const [puppy, setPuppy] = useState({
+        email: '',
+        email_check: false,
+        password: '',
+        password_check: '',
+        pnumber: '',
+        name: '',
+        sex: '',
+        birth: '',
+        agreeUse: false,
+        agreePriv: false,
+    });
+
+    // 추가 기능 구현 부분
+    // ...
+
+    // 수정 기능 구현 부분
+    // ...
+
+    // 삭제 기능 구현 부분
+    // ...
+
+    // 반환되는 JSX가 없는 경우 null 반환
+    return null;
+}
+
+
 
 /* Mypuppyinfo 4개 세트 */
 export function Mypuppylist1(props) {
