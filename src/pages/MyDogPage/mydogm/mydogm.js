@@ -32,7 +32,7 @@ function Mydogm() {
               <div className="regBtn" type="submit">
                 <Button className='regBtn'
                   variant="secondary"
-                  onClick={() => { console.log("Butto clicked"); setMypuppyRegOn(true);}}
+                  onClick={() => { console.log("Button clicked"); setMypuppyRegOn(true);}}
                 >
                   등 록 하 기
                 </Button>

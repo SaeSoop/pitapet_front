@@ -140,7 +140,7 @@ const Header = () => {
         <NavMenu istoggleopen={istoggleopen}>
           <ul className="nav-menu">
             <li>
-              <Link to={"/mydogm"} className="nav-menu-list">
+              <Link to={"/my-puppy"} className="nav-menu-list">
                 내 강아지
               </Link>
             </li>
