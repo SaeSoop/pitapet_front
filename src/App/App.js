@@ -8,10 +8,11 @@ import Mypuppymore from '../pages/MyDogPage/mydogp/mydogp-more';
 import Diary from "../pages/DiaryPage/diary.js";
 import Photo from "../pages/PhotoPage/dogphoto.js";
 import LogIn from '../pages/AuthPage/login/login';
+import Main from '../pages/MainPage/mainpage';
 import Join from '../pages/AuthPage/join/join';
 import FindId from '../pages/AuthPage/find/findid';
 import FindPwd from "../pages/AuthPage/find/findpwd.js";
-
+import MainPage from '../pages/MainPage/mainpage';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/signup" element={<Join />} />
           <Route path="/findid" element={<FindId />} />
           <Route path="/findpwd" element={<FindPwd />} />
+          <Route path="/" element={<MainPage />} />
         </Routes>
 
         <Footer />
