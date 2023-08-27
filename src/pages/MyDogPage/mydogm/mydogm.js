@@ -20,7 +20,7 @@ function Mydogm() {
               <h1 className="title">
                   <Mypuppytitle />
               </h1>
- 
+
               {/* 강아지 프로필 */}
               <div className="mypuppy-container">
                 <div className='mainlist'>
