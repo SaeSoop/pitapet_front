@@ -2,49 +2,85 @@
 .container {
     width: 440px;
     height: 860px;
-  }
-  body.modal-open { /*  */
+}
+body.modal-open { 
     overflow: hidden; 
-  }
-  
-  /* 팝업 스크롤바 */
-  .scrollable-content {
+}
+
+/* 팝업 스크롤바 */
+.scrollable-content {
     max-height: 780px; 
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 20px; 
-  
+
     &::-webkit-scrollbar {
-      width: 4px; 
+        width: 4px; 
     }
-  
+
     &::-webkit-scrollbar-thumb {
-      height: 10px;
-      background-color: #ffdfdf; 
-      border-radius: 5px; 
+        height: 10px;
+        background-color: #ffdfdf; 
+        border-radius: 5px; 
     }
-  
+
     &::-webkit-scrollbar-track {
-      background-color: #EFB4B4; 
-      border-radius: 5px;
+        background-color: #EFB4B4; 
+        border-radius: 5px;
     }
-  }
-  
-  /* 입력 리스트 공통 */
-  .popuplist {
-    font-size: 16px;
-    margin-left: 4px;
-    margin-right: 4px;
-  }
-  .popuplist label {
-    font-size: 16px;
-    margin-top: 16px;
-    margin-bottom: 4px;
-    margin-left: 4px;
-  }
-  
-  /* 수정하기 버튼 */
-  .modiBtn {
+}
+
+.mypuppymrimg {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+}
+
+/* 입력 리스트 목록명 */
+.listname {
+    margin-left: auto;
+    margin-right: auto;
+    color: #a1a1a1;
+    float: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+/* 입력 리스트 답변 */
+.listanswer {
+    margin-left: auto;
+    margin-right: auto;
+    color: #000000;
+    float: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+/* 공통 리스트 */
+.popuplist .listname {
+    margin-top: 36px;
+    font-size: 15px; 
+}
+.popuplist .listanswer {
+    margin-top: 10px;
+    font-size: 18px; 
+    font-weight: bold;
+}
+
+/* 수정하기 버튼 */
+.modiBtnp {
     margin-top: 200px;
     margin-bottom: 17px;
     margin-left: auto;
@@ -59,7 +95,7 @@
     font-weight: bold;
     float: center;
     display: block;
-  
+
     &:hover {
         background-color: #EFB4B4;
         color: #ffffff;
@@ -67,5 +103,4 @@
         font-style: bold;
         transition: all ease 0.5s;
     }
-  }
-  
+}

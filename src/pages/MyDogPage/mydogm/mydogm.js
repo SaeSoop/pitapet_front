@@ -4,6 +4,7 @@ import './mydogm.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import MypuppyReg from '../../../components/MyDogPage/mydogp';
 import Mypuppymore from '../mydogp/mydogp-more';
+import Mypuppymodi from '../mydogp/mydogp-modi';
 import { Button } from 'reactstrap';
 
 function Mydogm() {
@@ -11,7 +12,7 @@ function Mydogm() {
 
     return ( 
         <>
-        <MypuppyReg // 등록하기 누르면 뜨는 창 function -- 원래 MypuppyReg
+        <Mypuppymore // 등록하기 누르면 뜨는 창 function -- 원래 MypuppyReg
           show={MypuppyRegOn}
           onHide={() => setMypuppyRegOn(false)}
         />
@@ -32,7 +33,7 @@ function Mydogm() {
               <div className="regBtn" type="submit">
                 <Button className='regBtn'
                   variant="secondary"
-                  onClick={() => { console.log("Butto clicked"); setMypuppyRegOn(true);}}
+                  onClick={() => setMypuppyRegOn(true)}
                 >
                   등 록 하 기
                 </Button>
