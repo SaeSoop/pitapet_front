@@ -1,0 +1,57 @@
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* 취소하기 버튼 */
+.cancleBtnp {
+    margin-top: 200px;
+    margin-bottom: 17px;
+    margin-left: auto;
+    margin-right: 20px;
+    width: 46%;
+    height: 48px;
+    color: #787878;
+    border: none;
+    background-color: #ffdfdf;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    float: center;
+    display: block;
+
+    &:hover {
+        background-color: #EFB4B4;
+        color: #ffffff;
+        border-style: none;
+        font-style: bold;
+        transition: all ease 0.5s;
+    }
+}
+
+/* 저장하기 버튼 */
+.saveBtnp {
+    margin-top: 200px;
+    margin-bottom: 17px;
+    margin-left: 20px;
+    margin-right: auto;
+    width: 46%;
+    height: 48px;
+    color: #787878;
+    border: none;
+    background-color: #ffdfdf;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    float: center;
+    display: block;
+
+    &:hover {
+        background-color: #EFB4B4;
+        color: #ffffff;
+        border-style: none;
+        font-style: bold;
+        transition: all ease 0.5s;
+    }
+}
