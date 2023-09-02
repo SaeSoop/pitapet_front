@@ -1,11 +1,14 @@
-import React from 'react';
-import { Modal, Button, Form, Container } from 'reactstrap';
-import '../mydogp/mydogp-more.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import { MymoreImg } from '../../../components/MyDogPage/mydog-more';
+import React, { useState } from "react";
+import './mydogp-more.css';
+import { Modal, Button, Form, Container } from "react-bootstrap";
+import { MymoreImg } from "../../../components/MyDogPage/mydogp-more";
+import 'react-datepicker/dist/react-datepicker.css';
 
-/* 타이틀 */
-export function Mypuppymore(props) {
+
+
+{/* 팝업창 전체 */}
+export function Mypuppymore (props) {
+    const [MypuppyModiOn, setMypuppyModiOn] = useState(false);
     const { show, onHide } = props;
   
     const handleModalScroll = (event) => {
@@ -13,63 +16,76 @@ export function Mypuppymore(props) {
     };
   
     return (
-      <Modal className="mydogpop"
-        show={show}
-        onHide={onHide}
-        size="md"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
+        <>
+        <Mypuppymore // 등록하기 누르면 뜨는 창 function -- 원래 MypuppyReg
+          show={MypuppyModiOn}
+          onHide={() => setMypuppyModiOn(false)}
+        />
+        <Modal className="mydogpop"
+            show={show}
+            onHide={onHide}
+            size="md"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
         <Container>
           <Modal.Header closeButton />
           <Modal.Body closeButton>
-            <div className="scrollable-content" onWheel={handleModalScroll}>
+            <div className="scrollable-content morepop" onWheel={handleModalScroll}>
             
-            {/* <img src={process.env.PUBLIC_URL + '/images/mypuppym_image1.png'} alt={'내강아지 상세보기'} />
-            <MymoreImg Year="2022" Month="3" Day="22" 
-    puppyname="강아지" puppygender="아들" puppytype="닥스훈트" /> */}
-  
-            {/* 프로필 리스트 */}
+            {/* 강아지 이미지 */}
+            <img className='mypuppymrimg' src={process.env.PUBLIC_URL + '/images/mypuppym_image1.png'} alt={'Mypuppyimg1'} />
+              
+            {/* 입력 리스트 */}
             <Form className="popuplist">
-              <Form.Group className="morebirth">
-                <Form.Label>생일</Form.Label>
-                <label>2003.02.26</label>
-              </Form.Group>
-              
-              <Form.Group className="morespec">
-                <Form.Label>특기</Form.Label>
-                <label>빵야, 인사, 돌기, 코, 브이, 뽀뽀</label>
-              </Form.Group>
-              
-              <Form.Group className="morechar">
-                <Form.Label>특징</Form.Label>
-                <label>다리가 길다, 왕티즈</label>
-              </Form.Group>
-              
-              <Form.Group className="moreplay">
-                <Form.Label>좋아하는 놀이</Form.Label>
-                <label>터그 놀이, 산책, 공놀이</label>
+              <MymoreImg puppyname="초코" puppygender="아들" puppytype="닥스훈트" />
+
+              <Form.Group className="puppydatemr">
+                <label className="listname">생일</label>
+                <label className="listanswer">2003.02.26</label>
               </Form.Group>
   
-              <Form.Group className="moresnack">
-                <Form.Label>좋아하는 간식</Form.Label>
-                <label>연어, 우유껌, 북어포</label>
+              <Form.Group className="puppyspecmr">
+                <label className="listname">특기</label>
+                <label className="listanswer">빵야, 인사, 돌기, 코, 브이, 뽀뽀</label>
+              </Form.Group>
+              
+              <Form.Group className="puppycharmr">
+                <label className="listname">특징</label>
+                <label className="listanswer">다리가 길다, 왕티즈</label>
+              </Form.Group>
+              
+              <Form.Group className="puppyplaymr">
+                <label className="listname">좋아하는 놀이</label>
+                <label className="listanswer">터그 놀이, 산책, 공놀이</label>
               </Form.Group>
   
-              <Form.Group className="moresick">
-                <Form.Label>질환</Form.Label>
-                <label>슬개골 탈구, 닭고기 알레르기</label>
+              <Form.Group className="puppysnackmr">
+                <label className="listname">좋아하는 간식</label>
+                <label className="listanswer">연어, 우유껌, 북어포</label>
               </Form.Group>
-  
-              <Button block variant="info" type="button" className="my-5 signBtnp">
-                수 정 하 기
-              </Button>
+              
+              <Form.Group className="puppysickmr">
+                <label className="listname">질환</label>
+                <label className="listanswer">슬개골 탈구, 닭고기 알레르기</label>
+              </Form.Group>
+              
+              <div className="modiBtnp" type="submit">
+                <Button className='modiBtnp'
+                  variant="secondary"
+                  onClick={() => setMypuppyModiOn(true)}
+                >
+                  수 정 하 기
+                </Button>
+              </div>
+
             </Form>
             </div>
           </Modal.Body>
         </Container>
       </Modal>
+      </>
     );
-}
-
-export default Mypuppymore;
+  };
+  
+  export default Mypuppymore;
