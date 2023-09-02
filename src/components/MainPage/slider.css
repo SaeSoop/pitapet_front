@@ -1,0 +1,33 @@
+.slick-prev::before,
+.slick-next::before {
+    opacity: 0;
+    display: none;
+}
+.slick-slide div {
+    cursor: pointer;
+}
+/* 
+.SliderBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .SliderBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+} */
+
+.slick-slide > div {
+    display: grid;
+    place-items: center;
+    width: 80%;
+    margin-top: 50px;
+    margin: auto;
+    height: 500px;
+    padding: 0px;
+    background: red;
+}

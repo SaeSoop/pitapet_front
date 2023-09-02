@@ -21,7 +21,7 @@ function Mydogm() {
               <h1 className="title">
                   <Mypuppytitle />
               </h1>
- 
+
               {/* 강아지 프로필 */}
               <div className="mypuppy-container">
                 <div className='mainlist'>
@@ -34,6 +34,7 @@ function Mydogm() {
                 <Button className='regBtn'
                   variant="secondary"
                   onClick={() => setMypuppyRegOn(true)}
+
                 >
                   등 록 하 기
                 </Button>
