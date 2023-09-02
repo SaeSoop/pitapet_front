@@ -3,7 +3,7 @@
 
 import React from "react";
 
-const HorizonLine = ({ text }) => {
+export const HorizonLine = ({ text }) => {
   return (
     <div
       style={{

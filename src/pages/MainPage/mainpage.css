@@ -1,0 +1,76 @@
+/* Header 로그인 */
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&family=Gaegu:wght@700&family=Noto+Sans+KR&family=Walter+Turncoat&display=swap');
+
+.form-body {
+    width: 450px;
+    height: 100%;
+    margin: 40px auto;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 로그인 유지 버튼 */
+.login-keep-box {
+    align-items: center;
+    .checkbox {
+        width: 18px;
+        height: 18px;
+        margin: 0 10px 0 0;
+    }
+}
+
+/* 비밀번호 찾기 링크 텍스트 */
+.findpwd-link {
+    color: #2f3631a6;
+    &:hover {
+        opacity: 0.7;
+        transition: all ease 0.5s;
+    }
+}
+
+/* 로그인 버튼 */
+.loginBtn {
+    margin-bottom: 10px;
+    width: 30%;
+    color: #2f3631;
+    background-color: #ffe4e4;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: large;
+
+    &:hover {
+        color: #2f3631;
+        transition: all ease 0.5s;
+    }
+}
+
+/* 회원가입 링크 텍스트 */
+.sign-link {
+    text-decoration: none;
+    font-size: 12px;
+    color: #2f3631;
+    /* font-weight: bold; */
+    &:hover {
+        opacity: 0.7;
+        transition: all ease 0.5s;
+    }
+}
+
+/* 세로 구분선 */
+.vr-form {
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    .vr {
+        margin: 0 10px 0 10px;
+    }    
+}
+
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
