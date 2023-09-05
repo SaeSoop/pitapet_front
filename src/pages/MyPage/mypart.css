@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+/* title */
+.mypagetitle {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 68px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 55px;
+}
+
+/* 프로필 사진 */
+.mypagepro {
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 15%;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mypageprofile {
+    display: flex;
+    justify-content: center;
+    margin-right: 200px;
+}
+.mypageprofile img {
+    height: 200px;
+    width: 200px;
+    border-radius: 30%;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+.myprofilemodi {
+    text-align: left;
+    margin-left: 50px;
+    font-size: 14px;
+    color: rgb(96, 96, 96);
+}
+.myprofilemodi button {
+    height: 34px;
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 18px;
+    background-color: #D9D9D9;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10PX;
+}
+.profile_add {
+    margin-right: 38px;
+}
+
+/* 강아지 리스트 */
+.mypagemypuppy {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 15%;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mypagepuppies {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+.mypuppyimg1 {
+    height: 200px;
+    width: 200px;
+    margin-top: 60px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+.mypuppyunder {
+    margin-top: 14px;
+    margin-bottom: 80px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.mypuppyunder label {
+    width: 150px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* 한줄일기 & 사진첩 */
+.mypagediandpic {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 15%;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mypagepicture {
+    margin-left: 656px;
+}
+.v-line {
+    margin-left: 160px;
+    margin-right: 148px;
+    border-left : 2px solid #AAAAAA;
+    height : 94px;
+}
+
+.mypagebox {
+    height: 100px;
+    width: 165px;
+    margin-left: 30px;
+    margin-right: 20px;
+    border: 3px solid #FFC7C7;
+    border-radius: 16px;
+    background-color: white;
+}
+.mypagevalue {
+    padding-top: 20px;
+    padding-left: 24px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.mypageboxes {
+    display: flex;
+    margin-top: 50px;
+}
+.mypagenumber {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* 계정 정보 */
+.mypagejoin {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 15%;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mypageinfos {
+    margin-top: 30px;
+    margin-left: 26.4%;
+    margin-right: 100px;
+    font-size: 17px;
+}
+.myinfo-input {
+}
+.myinfo-input input {
+    position: relative;
+    left: 20px;
+    width: 600px;
+    height: 45px;
+    padding-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+.myinfo-gender {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 100px;
+}
+.accmodiBtn {
+    margin-top: 20px;
+    margin-bottom: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 140px;
+    height: 46px;
+    color: #EFB4B4;
+    border-color: #EFB4B4;
+    border-width: 2px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    float: center;
+    display: block;
+
+    &:hover {
+        background-color: #ffdfdf;
+        color: #ffffff;
+        border-style: none;
+        font-style: bold;
+        transition: all ease 0.5s;
+    }
+}

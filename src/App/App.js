@@ -10,6 +10,7 @@ import Photo from "../pages/PhotoPage/dogphoto.js";
 import LogIn from '../pages/AuthPage/login/login';
 import Main from '../pages/MainPage/mainpage';
 import Join from '../pages/AuthPage/join/join';
+import MyPart from '../pages/MyPage/mypart';
 import FindId from '../pages/AuthPage/find/findid';
 import FindPwd from "../pages/AuthPage/find/findpwd.js";
 import MainPage from '../pages/MainPage/mainpage';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/dogphoto" element={<Photo />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<Join />} />
+          <Route path="/mypage" element={<MyPart />} />
           <Route path="/findid" element={<FindId />} />
           <Route path="/findpwd" element={<FindPwd />} />
           <Route path="/" element={<MainPage />} />

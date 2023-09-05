@@ -165,6 +165,10 @@ const Header = () => {
             <Link to={"/signup"} className="nav-user-link">
               회원가입
             </Link>
+            <div className="vr" />
+            <Link to={"/mypage"} className="nav-user-link">
+              마이페이지
+            </Link>
           </div>
         </NavUser>
         <FaBars className="menuToggleBtn" onClick={handleToggleOpen} />
