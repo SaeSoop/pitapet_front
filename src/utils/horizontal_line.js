@@ -13,7 +13,7 @@ const HorizonLine = ({ text }) => {
         lineHeight: "0.1em",
         margin: "10px 0 20px",
         color: "#2f3631a6",
-        fontSize: "20px"
+        // fontSize: "20px"
       }}
     >
       <span style={{ background: "#fff", padding: "0 10px" }}>{text}</span>

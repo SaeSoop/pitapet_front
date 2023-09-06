@@ -1,7 +1,6 @@
 // 한 줄 일기 컨포넌트
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Form } from 'react-bootstrap';
-
 
 // 기분 선택 컴포넌트
 export function Mood() {
@@ -71,15 +70,26 @@ export function Input() {
     );
 }
 
+
 // 사진 첨부 컴포넌트
 export function PutImage() {
+
+    const imageInput = useRef();
+
+    // 버튼클릭시 input태그에 클릭이벤트
+    const onCickImageUpload = () => {
+        imageInput.current.click();
+    };
     
     return (
         <div>
             <div className="image-div">
-                <span className="material-symbols-outlined add-icon">
-                    add
-                </span>
+                <input type="file" style={{ display: "none" }} ref={imageInput} />
+                <button onClick={onCickImageUpload} style={{ border: "none" }}>
+                    <span className="material-symbols-outlined add-icon">
+                        add
+                    </span>
+                </button>
             </div>
         </div>
     );
@@ -132,4 +142,3 @@ export function DiaryDetails(props) {
         </div>
     );
 }
-
