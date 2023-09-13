@@ -1,0 +1,21 @@
+
+.q {
+    margin-top: -10px;
+}
+
+.answer-div {
+    float: left;
+}
+
+.date {
+    font-size: x-large;
+    font-weight: bold;
+    margin: 10px 10px;
+    display: flex;
+    text-align: left;
+}
+
+.answer {
+    font-size: x-large;
+    margin: 10px 5px;
+}

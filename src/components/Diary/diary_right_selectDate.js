@@ -4,7 +4,6 @@ import Calendar from 'react-calendar';
 import moment from "moment/moment";
 import 'react-calendar/dist/Calendar.css';
 import HorizonLine from "../../utils/horizontal_line";
-import FootPrint from "./footprints.png";
 
 
 const Container = styled.div`

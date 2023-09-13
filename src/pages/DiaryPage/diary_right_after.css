@@ -1,0 +1,48 @@
+
+.title-content-text {
+    padding: 5px 0;
+    display: flex;
+    float: left;
+}
+
+.title-content-text-font {
+    font-size: 20px;
+    text-align: left;
+}
+
+.upload-div2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 0 20px 0;
+}
+
+.showImage {
+    width: 120px;
+    float: left;
+    margin: 5px;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -70px;
+}
+
+.rightAfterBtn {
+    /* margin-bottom: 10px; */
+    margin: 0 50px 10px 50px;
+    width: 150px;
+    color: #2f3631;
+    background-color: #ffe4e4;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: large;
+}
